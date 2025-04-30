@@ -44,7 +44,7 @@ print("Decrypted Message:", decrypted_message)
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/b5642ebe-06d9-4099-be3a-9d91a1f27974)
+![Screenshot 2025-04-30 083253](https://github.com/user-attachments/assets/6bc19075-6862-49e1-ba4e-23462607a9dd)
 
 ## Result:
   The program is executed successfully
