@@ -1,4 +1,4 @@
-# EX-NO-7-Implement-DES-Encryption
+# EX-NO-7-Implement-DES-Encryption-and-Decryption
 
 ## Aim:
 
@@ -12,12 +12,39 @@ To use the Data Encryption Standard (DES) algorithm for a practical application,
 4. DES applies initial and final permutations along with 16 rounds of substitution and permutation transformations to produce ciphertext.
 
 ## Program:
+```
+def encrypt(message, key):
+    encrypted = []
+    key_length = len(key)
+    for i in range(len(message)):
+        encrypted_char = ord(message[i]) ^ ord(key[i % key_length])
+        encrypted.append(encrypted_char)
+    return encrypted
 
+def decrypt(encrypted, key):
+    decrypted = []
+    key_length = len(key)
+    for i in range(len(encrypted)):
+        decrypted_char = chr(encrypted[i] ^ ord(key[i % key_length]))
+        decrypted.append(decrypted_char)
+    return ''.join(decrypted)
 
+print("\n**Simulation of DES-like XOR encryption and decryption**\n")
 
+message = input("Enter the message to encrypt: ")
+key = input("Enter the encryption key: ")
+
+encrypted_message = encrypt(message, key)
+print("Original Message:", message)
+
+print("Encrypted Message:", ' '.join(f'{char:02X}' for char in encrypted_message))
+
+decrypted_message = decrypt(encrypted_message, key)
+print("Decrypted Message:", decrypted_message)
+```
 
 ## Output:
-
+![image](https://github.com/user-attachments/assets/b5642ebe-06d9-4099-be3a-9d91a1f27974)
 
 ## Result:
   The program is executed successfully
